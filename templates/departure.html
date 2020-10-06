@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ departures[departure] }}</h1>
+    <p class="mb-4">Найдено {{ tours|length }} туров, от {{ (tours.values() | min(attribute='price')).price }} до {{ (tours.values() | max(attribute='price')).price }} и от {{ (tours.values() | min(attribute='nights')).nights }} до {{ (tours.values() | max(attribute='nights')).nights }} ночей</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+      {% for k,v in tours.items() %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+          <div class="card-body">
+            <h2 class="h5 card-title">{{v.title}}</h2>
+            <p class="card-text">{{v.description}}</p>
+            <a href="/tours/{{k}}/" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}
