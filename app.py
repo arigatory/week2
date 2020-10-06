@@ -24,4 +24,5 @@ def render_departure(departure):
     return render_template('departure.html', departures=departures, departure=departure, tours=filtered_tours)
 
 
-app.run("0.0.0.0",5000)
+if __name__ == '__main__':
+    app.run()
