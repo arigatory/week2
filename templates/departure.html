@@ -9,7 +9,7 @@
       {% for k,v in tours.items() %}
       <div class="col-4">
         <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+          <img src="{{ v.picture }}" class="card-img-top img-fluid" alt="">
           <div class="card-body">
             <h2 class="h5 card-title">{{v.title}}</h2>
             <p class="card-text">{{v.description}}</p>
